@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recent_stories",
+  "info": {
+    "singularName": "recent-storie",
+    "pluralName": "recent-stories",
+    "displayName": "RecentStories"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "base_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "location": {
+      "type": "string"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection.collection",
+      "inversedBy": "recent_stories"
+    }
+  }
+}
